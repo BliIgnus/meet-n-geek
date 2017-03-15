@@ -1,0 +1,47 @@
+body
+{
+  background-color: #404040;
+  color: #AFAFAF;
+  font-family: Verdana, sans-serif;
+}
+
+a
+{
+  color: #FFFFFF;
+}
+
+.social
+{
+  width:99%;
+  height:30%;
+
+  background-color: #303030;
+  margin:10px;
+}
+
+.profile
+{
+  width:20%;
+  height:100%;
+
+  background-color: #303030;
+
+  margin:10px;
+}
+
+.main
+{
+  display:flex;
+  flex-direction:row;
+}
+
+.games
+{
+  width:75%;
+  height:800px;
+
+  background-color: #404040;
+
+  float:left;
+  margin:10px;
+}
