@@ -11,6 +11,8 @@
 /*******************
  * Database settings
  ******************/
+// Type of the database system
+$dbsys = "mysqli";
 
 // Hostname of database server
 $db_host = "localhost";
