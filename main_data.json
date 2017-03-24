@@ -5,15 +5,18 @@
     "friendList": [
       {
         "pseudo": "Ami 1",
-        "playedGame": "XCOM 2"
+        "playedGame": "XCOM 2",
+        "status": "online"
       },
       {
         "pseudo": "Ami 2",
-        "playedGame": "Team Fortress 2"
+        "playedGame": "Team Fortress 2",
+        "status": "online"
       },
       {
         "pseudo": "Ami 3",
-        "playedGame": "BliLand"
+        "playedGame": "BliLand",
+        "status": "offline"
       }
     ]
   },

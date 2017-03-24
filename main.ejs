@@ -31,7 +31,7 @@
               <p class="f_pseudo" id="pseudo">
                 <% var profilePic = matches[i].profilePic;
                   if(profilePic=="") {
-                    profilePic = "http://localhost:8080/public/images/male_dflt_profile_pic";} %>
+                    profilePic = "/images/male_dflt_profile_pic.jpg";} %>
                 <img class="f_profile_pic" id="profile_pic" src="<%= profilePic %>"
                   alt="Profile Picture" style="float:left;width:60px;height:60px;">
                 <%= matches[i].pseudo %>
@@ -60,8 +60,8 @@
             <h3 class="user_pseudo">
               <% var profilePic = user.profilePic;
                 if(profilePic=="") {
-                  profilePic = "http://localhost:8080/public/images/male_dflt_profile_pic";} %>
-              <img class="user_profile_pic" id="profile_pic" src="http://localhost:8080/public/images/male_dflt_profile_pic"
+                  profilePic = "/images/male_dflt_profile_pic.jpg";} %>
+              <img class="user_profile_pic" id="profile_pic" src="/images/male_dflt_profile_pic.jpg"
                 alt="Profile Picture" style="float:left;width:60px;height:60px;">
                 <%= user.pseudo %>
             </h3>
@@ -81,7 +81,7 @@
             <% for(var i=0; i<Math.min(user.friendList.length, 5); i++) {%>
               <div class="friend_list" id="friend_<%= i %>">
                 <p class="f_pseudo" id="pseudo">
-                  <img class="f_list_profile_pic_online" id="profile_pic" src="http://localhost:8080/public/images/male_dflt_profile_pic"
+                  <img class="f_list_profile_pic_<%= user.friendList[i].status %>" id="profile_pic" src="/images/male_dflt_profile_pic.jpg"
                     alt="Profile Picture" style="float:left;width:30px;height:30px;">
                   <%= user.friendList[i].pseudo %>
                 </p>
@@ -129,7 +129,7 @@
                   <div class="game_player_list">
                     <div class="game_player" id="player_1">
                       <p class="p_pseudo" id="pseudo">
-                        <img class="p_profile_pic" id="profile_pic" src="http://localhost:8080/public/images/male_dflt_profile_pic"
+                        <img class="p_profile_pic" id="profile_pic" src="/images/male_dflt_profile_pic.jpg"
                           alt="Profile Picture" style="float:left;width:30px;height:30px;">
                         Pseudo
                       </p>
@@ -141,7 +141,7 @@
                     </div>
                     <div class="game_player" id="player_2">
                       <p class="p_pseudo" id="pseudo">
-                        <img class="p_profile_pic" id="profile_pic" src="http://localhost:8080/public/images/male_dflt_profile_pic"
+                        <img class="p_profile_pic" id="profile_pic" src="/images/male_dflt_profile_pic.jpg"
                           alt="Profile Picture" style="float:left;width:30px;height:30px;">
                         Pseudo
                       </p>
@@ -153,7 +153,7 @@
                     </div>
                     <div class="game_player" id="player_3">
                       <p class="p_pseudo" id="pseudo">
-                        <img class="p_profile_pic" id="profile_pic" src="http://localhost:8080/public/images/male_dflt_profile_pic"
+                        <img class="p_profile_pic" id="profile_pic" src="/images/male_dflt_profile_pic.jpg"
                           alt="Profile Picture" style="float:left;width:30px;height:30px;">
                         Pseudo
                       </p>
@@ -165,7 +165,7 @@
                     </div>
                     <div class="game_player" id="player_4">
                       <p class="p_pseudo" id="pseudo">
-                        <img class="p_profile_pic" id="profile_pic" src="http://localhost:8080/public/images/male_dflt_profile_pic"
+                        <img class="p_profile_pic" id="profile_pic" src="/images/male_dflt_profile_pic.jpg"
                           alt="Profile Picture" style="float:left;width:30px;height:30px;">
                         Pseudo
                       </p>
@@ -189,6 +189,10 @@
               </div>
             </div>
           <% } %>
+
+          <div class="button_more_games" id="button_more_games">
+            <p>Show more games</p>
+          </div>
 
         </section>
       </div>
