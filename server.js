@@ -24,6 +24,19 @@ app.use(bodyParser.json());
 app.listen(8080);
 
 
+function connect(req, email, password) {
+    var session = userSession.getSession(req);
+    userSession.setSessionId(session, database.checkLoginCredentials(email, password));
+
+    res.writeHead(301, {
+        Location: "http://localhost:8080/"
+    });
+    res.end();
+
+}
+
+
+
 app.get('/', function (req, res) {
 
     var connected = userSession.checkIfConnected(req);

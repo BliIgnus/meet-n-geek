@@ -42,7 +42,7 @@ function checkLoginCredentials(mail, password) {
     return connection.query(query, function (error, results, fields) {
         if (error) throw error;
         
-        console.log(results);
+        //console.log(results);
         console.log(results[0]);
         //return results;
     });
