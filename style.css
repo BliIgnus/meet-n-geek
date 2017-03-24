@@ -10,24 +10,133 @@ a
   color: #FFFFFF;
 }
 
+.header_h1
+{
+  display: inline-block;
+}
+
+.button_notif
+{
+  margin-top:30px;
+  float: right;
+}
+
+.button_message
+{
+  margin-top:30px;
+  float: right;
+}
+
 .social
 {
   width:99%;
   height:30%;
 
+  border-radius:5px;
+  box-shadow: 1px 2px 5px 1px #101010 inset;
+
   background-color: #303030;
   margin:10px;
 }
+
+.s_profiles
+{
+  display:flex;
+  flex-direction:row;
+}
+
+.friend_proposal
+{
+  width:20%;
+  height:90%;
+  border-radius:5px;
+  box-shadow: 1px 2px 5px 1px #101010;
+
+  background-color: #606060;
+
+  margin:10px;
+}
+
+.f_profile_pic
+{
+  width:50px;
+  height:50px;
+  border-radius:30px;
+}
+
+.f_pseudo
+{
+  font-weight: bold;
+}
+
+.p_pseudo
+{
+  font-weight: bold;
+}
+
 
 .profile
 {
   width:20%;
   height:100%;
 
+  border-radius:5px;
+  box-shadow: 1px 2px 5px 1px #101010 inset;
+
   background-color: #303030;
 
   margin:10px;
 }
+
+.user_profile_pic
+{
+  border-radius:30px;
+}
+
+.friend_list
+{
+  width:90%;
+  height:5%;
+  border-radius:5px;
+  box-shadow: 1px 2px 5px 1px #101010;
+
+  background-color: #606060;
+
+  margin:10px;
+}
+
+.f_list_profile_pic_online
+{
+  width:30px;
+  height:30px;
+  border-radius:15px;
+  box-shadow: -1px 2px 1px 1px #80C580 ;
+}
+
+
+.f_list_profile_pic_offline
+{
+  width:30px;
+  height:30px;
+  border-radius:15px;
+  box-shadow: -1px 2px 1px 1px #C58080 ;
+}
+
+.button_load_friends
+{
+  width:90%;
+  height:5%;
+  border-radius:5px;
+  box-shadow: 1px 2px 5px 1px #101010;
+
+  font-weight: bold;
+  text-align:center;
+
+  background-color: #606060;
+
+  margin:10px;
+}
+
 
 .main
 {
@@ -44,4 +153,105 @@ a
 
   float:left;
   margin:10px;
+}
+
+.game_proposal
+{
+  width:100%;
+
+  border-radius:5px;
+  box-shadow: 1px 2px 5px 1px #101010 inset;
+
+  background-color: #7070A5;
+
+  margin:10px;
+}
+
+.game_title
+{
+  text-shadow: 2px 2px 5px 1px #101010;
+  margin:10px;
+}
+
+.game_card
+{
+    display:flex;
+    flex-direction:row;
+}
+
+.game_pic
+{
+  border-radius:2px;
+  box-shadow: 1px 2px 5px 1px #101010;
+
+  margin:10px;
+}
+
+.game_card_right
+{
+  display:flex;
+  flex-direction:column;
+}
+
+.game_player_list
+{
+  display:flex;
+  flex-direction:row;
+}
+
+.game_player
+{
+  width:100%;
+  height:80%;
+  border-radius:5px;
+  box-shadow: 1px 2px 5px 1px #101010;
+
+  background-color: #606060;
+
+  margin:10px;
+}
+
+.p_profile_pic
+{
+  width:30px;
+  height:30px;
+  border-radius:15px;
+}
+
+.tags_list
+{
+    display:flex;
+    flex-direction:row;
+}
+
+.tags
+{
+  width:10%;
+  height:100%;
+  border-radius:2px;
+  box-shadow: 1px 2px 3px 1px #101010;
+  background-color: #202020;
+  margin:5px;
+}
+
+.games_links
+{
+  display:flex;
+  flex-direction:row;
+}
+
+.button_more_games
+{
+  width:100%;
+
+  border-radius:5px;
+  box-shadow: 1px 2px 5px 1px #101010;
+
+  font-weight: bold;
+  text-align:center;
+
+  background-color: #7070A5;
+
+  margin:10px;
+  padding:2px;
 }
