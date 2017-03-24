@@ -1,0 +1,13 @@
+{
+    "name": "meeet-n-geek",
+    "version": "0.0.1",
+    "description": "You want to meet, and geek !",
+    "main": "server.js",
+    "author": "Ignurick",
+    "dependencies": {
+        "express": "latest",
+        "mysql": "latest",
+        "html": "latest",
+        "ejs": "latest"
+    }
+}
