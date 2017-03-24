@@ -1,13 +1,21 @@
 {
-    "name": "meeet-n-geek",
-    "version": "0.0.1",
-    "description": "You want to meet, and geek !",
-    "main": "server.js",
-    "author": "Ignurick",
-    "dependencies": {
-        "express": "latest",
-        "mysql": "latest",
-        "html": "latest",
-        "ejs": "latest"
-    }
+  "name": "meeet-n-geek",
+  "version": "0.0.1",
+  "description": "You want to meet, and geek !",
+  "main": "server.js",
+  "author": "Ignurick",
+  "scripts": {
+    "start": "supervisor ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "ejs": "latest",
+    "express": "^4.15.2",
+    "express-generator": "latest",
+    "express-session": "latest",
+    "html": "latest",
+    "morgan": "^1.8.1",
+    "mysql": "latest",
+    "supervisor": "latest"
+  }
 }
