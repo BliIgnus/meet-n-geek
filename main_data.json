@@ -1,0 +1,71 @@
+{
+  "user": {
+    "pseudo": "Johnson",
+    "profilePic": "",
+    "friendList": [
+      {
+        "pseudo": "Ami 1",
+        "playedGame": "XCOM 2"
+      },
+      {
+        "pseudo": "Ami 2",
+        "playedGame": "Team Fortress 2"
+      },
+      {
+        "pseudo": "Ami 3",
+        "playedGame": "BliLand"
+      }
+    ]
+  },
+
+  "matches": [
+    {
+      "pseudo": "Steven",
+      "profilePic": "",
+      "age": "18",
+      "location": "Paris"
+    },
+    {
+      "pseudo": "James",
+      "profilePic": "",
+      "age": "16",
+      "location": "Rennes"
+    },
+    {
+      "pseudo": "Olga",
+      "profilePic": "",
+      "age": "22",
+      "location": "Oslo"
+    }
+  ],
+
+  "gameList": [
+    {
+      "name": "XCOM 2",
+      "steamID": "268500",
+      "tags": [
+        "SF",
+        "Turn-based",
+        "Aliens"
+      ]
+    },
+    {
+      "name": "BORDERLANDS 2",
+      "steamID": "49520",
+      "tags": [
+        "FPS",
+        "Coop",
+        "RPG"
+      ]
+    },
+    {
+      "name": "PORTAL 2",
+      "steamID": "620",
+      "tags": [
+        "Puzzle",
+        "Best game ever",
+        "Glados"
+      ]
+    }
+  ]
+}

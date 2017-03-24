@@ -27,13 +27,17 @@ app.get('/', function(req, res) {
 
 app.get('/main', function(req, res) {
 
+    var main_data = JSON.parse(fs.readFileSync('main_data.json'));
 
-    var answer = database.answer
-    console.log(answer);
+
+
+    //var answer = database.answer
+    //console.log(answer);
 
     var connect = test.connectUser("aldarick@orange.fr", "aldarick");
 
-    res.end(ejs.render(templateMain));
+    //var html = new EJS({url: 'main.ejs'}).render(main_data);
+    res.end(ejs.render(templateMain, main_data));
 
 
 });
