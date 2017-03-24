@@ -65,15 +65,6 @@
                 alt="Profile Picture" style="float:left;width:60px;height:60px;">
                 <%= user.pseudo %>
             </h3>
-            <ul>
-              <li>Pseudo</li>
-              <li>Profile pic</li>
-              <li>Spoken languages</li>
-              <li>Localisation</li>
-              <li>Steam</li>
-              <li>Skype</li>
-              <li>Discord</li>
-            </ul>
           </div>
 
           <div class="p_friend_list">
@@ -96,10 +87,16 @@
 
           <div class="p_games">
             <h3>My games</h3>
-            <ul>
-              <li>Jeu 1</li>
-              <li>Jeu 2</li>
-            </ul>
+
+            <% for(var i=0; i<Math.min(user.gameList.length, 3); i++) {%>
+              <div class="game_list" id="game_<%= i %>">
+                <p class="p_game_name"><%= user.gameList[i].name %></p>
+                  <img class="p_game_pic" id="p_game_pic" src="http://cdn.akamai.steamstatic.com/steam/apps/<%= user.gameList[i].steamID %>/header.jpg?t=1484004426"
+                    alt="Game illustration" style="width:100%;height:100%;">
+                <p>Create a new lobby</p>
+              </div>
+            <% } %>
+
           </div>
         </section>
 

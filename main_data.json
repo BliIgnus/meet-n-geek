@@ -18,6 +18,35 @@
         "playedGame": "BliLand",
         "status": "offline"
       }
+    ],
+    "gameList": [
+      {
+        "name": "XCOM 2",
+        "steamID": "268500",
+        "tags": [
+          "SF",
+          "Turn-based",
+          "Aliens"
+        ]
+      },
+      {
+        "name": "BORDERLANDS 2",
+        "steamID": "49520",
+        "tags": [
+          "FPS",
+          "Coop",
+          "RPG"
+        ]
+      },
+      {
+        "name": "PORTAL 2",
+        "steamID": "620",
+        "tags": [
+          "Puzzle",
+          "Best game ever",
+          "Glados"
+        ]
+      }
     ]
   },
 
