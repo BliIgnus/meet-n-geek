@@ -24,15 +24,31 @@ app.use(bodyParser.json());
 app.listen(8080);
 
 
-function connect(req, email, password) {
-    var session = userSession.getSession(req);
-    userSession.setSessionId(session, database.checkLoginCredentials(email, password));
+function connect(req, res, email, password) {
 
-    res.writeHead(301, {
-        Location: "http://localhost:8080/"
+
+    database.checkLoginCredentials(email, password, function (err, id) {
+        if (err) {
+            // error handling code goes here
+            console.log("ERROR : ", err);
+        } else {
+            // code to execute on data retrieval
+            
+            console.log("========= \n Got : " + id)
+            
+            // set session id if the login credientials are correct. Do nothing otherwise
+            if (id){
+                var session = userSession.getSession(req);
+                userSession.setSessionId(session, id);
+            }
+            
+            // redirect to the index
+            res.writeHead(301, {
+                Location: "http://localhost:8080/"
+            });
+            res.end();
+        }
     });
-    res.end();
-
 }
 
 
@@ -40,7 +56,7 @@ function connect(req, email, password) {
 app.get('/', function (req, res) {
 
     var connected = userSession.checkIfConnected(req);
-    if (connected) {
+    if (!connected) {
         res.writeHead(301, {
             Location: "http://localhost:8080/signin"
         });
@@ -56,7 +72,7 @@ app.get('/', function (req, res) {
 
 });
 
-app.get('/main', function(req, res) {
+app.get('/main', function (req, res) {
 
     var main_data = JSON.parse(fs.readFileSync('main_data.json'));
 
@@ -74,18 +90,8 @@ app.get('/signin', function (req, res) {
 app.post('/connect', function (req, res) {
 
     var email = req.body.mail;
-
     var password = req.body.password;
-    var correct = database.checkLoginCredentials(email, password);
-
-    if (correct) {
-        console.log("Connecting...")
-        connect(req, email, password);
-    } else {
-        res.writeHead(301, {
-            Location: "http://localhost:8080/signin"
-        });
-    }
-
+    console.log("Connecting (" + email + ", " + password + ")");
+    connect(req, res, email, password);
 
 });

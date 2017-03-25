@@ -28,32 +28,29 @@ function getConnection() {
 }
 
 
-// Returns true if the login credentials were correct, false otherwise
-function checkLoginCredentials(mail, password) {
-
-    var connection = getConnection();
+// Returns the id the login credentials were correct, 0 otherwise
+function checkLoginCredentials(mail, password, callback) {
+    var con = getConnection();
 
     var query = "SELECT id from users " +
         "WHERE users.email = \"" + mail + "\" " +
-        "AND users.password = \"" + password  + "\" "
+        "AND users.password = \"" + password + "\" "
 
-    console.log(query);
-    
-    console.log("QUERYING :");
-    return connection.query(query, function (error, results, fields) {
-        console.log("RESULTS :");
+    var result = -1;
+    con.query(query, function (err, rows) {
+        if (err) callback(err,null);
+
+        console.log('Data received from Db:\n');
+        console.log(rows);
+
+        console.log('ID:\n');
+        if (rows.length < 1) result = 0;
+        else result = rows[0].id;
         
-        if (error) throw error;
-        console.log("RESULTS :");
-        //console.log(results);
-        console.log(results[0]);
-        return results;
+        callback(null,result);
+
     });
-    
-    closeConnection(connection);
 }
-
-
 
 
 module.exports.checkLoginCredentials = checkLoginCredentials;
