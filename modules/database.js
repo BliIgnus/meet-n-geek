@@ -39,12 +39,15 @@ function checkLoginCredentials(mail, password) {
 
     console.log(query);
     
+    console.log("QUERYING :");
     return connection.query(query, function (error, results, fields) {
-        if (error) throw error;
+        console.log("RESULTS :");
         
+        if (error) throw error;
+        console.log("RESULTS :");
         //console.log(results);
         console.log(results[0]);
-        //return results;
+        return results;
     });
     
     closeConnection(connection);
