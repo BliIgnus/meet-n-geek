@@ -33,15 +33,15 @@ function connect(req, res, email, password) {
             console.log("ERROR : ", err);
         } else {
             // code to execute on data retrieval
-            
+
             console.log("========= \n Got : " + id)
-            
+
             // set session id if the login credientials are correct. Do nothing otherwise
-            if (id){
+            if (id) {
                 var session = userSession.getSession(req);
                 userSession.setSessionId(session, id);
             }
-            
+
             // redirect to the index
             res.writeHead(301, {
                 Location: "http://localhost:8080/"
@@ -62,13 +62,58 @@ app.get('/', function (req, res) {
         });
         res.end();
     } else {
-        res.writeHead(200, {
-            "Content-Type": "text/plain"
+
+        var main_data = JSON.parse(fs.readFileSync('main_data.json'));
+
+
+        // retrieve the id
+        var id = userSession.getSessionId(userSession.getSession(req));
+
+        //test
+        console.log("TEEEEEST");
+        database.getAllUserInfos(id, function (err, infos) {
+            if (err) {
+                // error handling code goes here
+                console.log("ERROR : ", err);
+            } else {
+                // code to execute on data retrieval
+
+                // set userName
+                main_data.user.pseudo = infos[0][0].pseudo;
+                
+                for(i=0; i < infos[1].length; i++){
+                    main_data.user.friendList[i].pseudo = infos[1][i].pseudo;    
+                }
+                
+                
+                
+                // Show the main page
+                res.end(ejs.render(templateMain, main_data));
+                
+            }
         });
-        res.end("Hello World\n");
+
+
+        // retrieve the info
+//        database.getUserInfos(id, function (err, infos) {
+//            if (err) {
+//                // error handling code goes here
+//                console.log("ERROR : ", err);
+//            } else {
+//                // code to execute on data retrieval
+//
+//                console.log("========= \n Got : ");
+//                console.log(infos);
+//
+//                // set userName
+//                main_data.user.pseudo = infos.pseudo;
+        
+//                res.end(ejs.render(templateMain, main_data));
+//            }
+//
+//        });
+
     }
-
-
 
 });
 

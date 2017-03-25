@@ -13,7 +13,6 @@ function getSessionId(session){
 }
 
 function checkIfConnected(req){
-    
     console.log("User id : " + getSession(req).userId)
     return getSession(req).userId;
 }
