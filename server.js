@@ -70,48 +70,84 @@ app.get('/', function (req, res) {
         var id = userSession.getSessionId(userSession.getSession(req));
 
         //test
-        console.log("TEEEEEST");
         database.getAllUserInfos(id, function (err, infos) {
             if (err) {
                 // error handling code goes here
                 console.log("ERROR : ", err);
             } else {
+                
+                console.log("Showing friends");
                 // code to execute on data retrieval
 
                 // set userName
                 main_data.user.pseudo = infos[0][0].pseudo;
-                
-                for(i=0; i < infos[1].length; i++){
-                    main_data.user.friendList[i].pseudo = infos[1][i].pseudo;    
+
+                for (i = 0; i < infos[1].length; i++) {
+                    main_data.user.friendList[i].pseudo = infos[1][i].pseudo;
                 }
+
+
+                // Retrieve games
                 
-                
-                
-                // Show the main page
-                res.end(ejs.render(templateMain, main_data));
-                
+                console.log("Showing games");
+                database.getAllLikedGamesInfos(id, function (err, data) {
+
+                    if (err) {
+                        // error handling code goes here
+                        console.log("ERROR : ", err);
+                    } else {
+
+
+                        console.log("==== GETTING RESULTS OF getAllLikedGamesInfos====")
+                        console.log(data);
+
+                        for (i = 0; i < data[0].length; i++) {
+
+                            console.log("Game : " + data[0][i].name);
+
+                            main_data.user.gameList[i].name = data[0][i].name;
+                            main_data.user.gameList[i].steamID = data[0][i].steam_id;
+
+                            var tags = []
+                            for (j = 0; j < data[1][i].length; j++) {
+
+                                console.log("Tag " + j + " : " + data[1][i][j].name);
+                                tags[j] = data[1][i][j].name;
+                                main_data.user.gameList[i].tags = tags;
+                            }
+                        }
+
+
+                    }
+
+                    // Show the main page
+                    res.end(ejs.render(templateMain, main_data));
+
+                });
+
+
             }
         });
 
 
         // retrieve the info
-//        database.getUserInfos(id, function (err, infos) {
-//            if (err) {
-//                // error handling code goes here
-//                console.log("ERROR : ", err);
-//            } else {
-//                // code to execute on data retrieval
-//
-//                console.log("========= \n Got : ");
-//                console.log(infos);
-//
-//                // set userName
-//                main_data.user.pseudo = infos.pseudo;
-        
-//                res.end(ejs.render(templateMain, main_data));
-//            }
-//
-//        });
+        //        database.getUserInfos(id, function (err, infos) {
+        //            if (err) {
+        //                // error handling code goes here
+        //                console.log("ERROR : ", err);
+        //            } else {
+        //                // code to execute on data retrieval
+        //
+        //                console.log("========= \n Got : ");
+        //                console.log(infos);
+        //
+        //                // set userName
+        //                main_data.user.pseudo = infos.pseudo;
+
+        //                res.end(ejs.render(templateMain, main_data));
+        //            }
+        //
+        //        });
 
     }
 

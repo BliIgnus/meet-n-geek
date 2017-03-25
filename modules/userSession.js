@@ -4,7 +4,6 @@ function getSession(req){
 }
 
 function setSessionId(session, id){
-    console.log("Setting session id : " + id);
     session.userId = id;
 }
 
@@ -13,7 +12,6 @@ function getSessionId(session){
 }
 
 function checkIfConnected(req){
-    console.log("User id : " + getSession(req).userId)
     return getSession(req).userId;
 }
 

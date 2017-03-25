@@ -17,6 +17,7 @@
     "morgan": "^1.8.1",
     "mysql": "latest",
     "supervisor": "latest",
-    "async" : "latest"
+    "async" : "latest",
+    "underscore" : "latest"
   }
 }
