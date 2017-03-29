@@ -1,0 +1,63 @@
+{
+  "user": {
+    "pseudo":,
+    "profilePic":,
+    "friendList": [
+      {
+        "pseudo":,
+        "playedGame":,
+        "status":
+      }
+    ],
+    "gameList": [
+      {
+        "name":,
+        "steamID":,
+        "tags": [
+        ]
+      }
+    ]
+  },
+
+  "matches": [
+    {
+      "pseudo": "Steven",
+      "profilePic": "",
+      "age": "18",
+      "location": "Paris"
+    },
+    {
+      "pseudo": "Jamesausorus",
+      "profilePic": "",
+      "age": "23",
+      "location": "Rennes"
+    },
+    {
+      "pseudo": "Olga",
+      "profilePic": "",
+      "age": "22",
+      "location": "Oslo"
+    },
+    {
+      "pseudo": "Xx_roxor_xX",
+      "profilePic": "",
+      "age": "17",
+      "location": "Montpellier"
+    },
+    {
+      "pseudo": "Miss-Pumpkin",
+      "profilePic": "",
+      "age": "19",
+      "location": "Paris"
+    }
+  ],
+
+  "gameList": [
+    {
+      "name":,
+      "steamID":,
+      "tags": [
+      ]
+    }
+  ]
+}

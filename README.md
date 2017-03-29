@@ -1,6 +1,29 @@
-# meet-n-geek
-Meet, and geek.
+# MEET-N-GEEK
+Meet, and geek application, by Tom LECHAUX and Hugues RIEUBLANDOU
+Project for the Web Application Course
 
+**Table of Contents**
+- [Introduction](#introduction)
+- [Getting Started](#getting-started)
+- [Installing](#installing)
+  - [Prerequisites](#prerequisites)
+  - [Installation steps](#installation-steps)
+    - [Get the project](#get-the-project)
+    - [Get the database](#get-the-database)
+    - [Get databse access rights](#get-databse-access-rights)
+  - [Launch the server](#launch-the-server)
+- [User guide](#)
+  - [Open the application](#open-the-application)
+  - [Valid usernames and passwords](#valid-usernames-and-passwords)
+  - [Disconnetion](#disconnetion)
+- [Our work](#our-work)
+  - [Files](#files)
+  - [Main page](#main-page)
+  - [Database](#database)
+- [Evolutions](#evolutions)
+  - [Security](#security)
+  - [Webpages](#webpages)
+  - [Message system](#message-system)
 
 
 # INTRODUCTION
@@ -40,7 +63,7 @@ YOU MUST HAVE XAMPP INSTALLED ON YOUR COMPUTER TO GET THIS APPLICATION WORKING. 
 - Then, select "Import". Click on "browse" and select the "meetngeek.sql" file you find on the meet-n-geek directory
 - Import the database by clicking on execute
 
-## Get databse access rights
+### Get databse access rights
 - On PhPMyAdmin select the meetngeek database, then select "Privileges"
 - Create a new user with "meetngeek" username and "meetngeek" password
 - Change the hostname from % to "localhost"
@@ -74,6 +97,21 @@ We didn't implement a disconnection function yet. To disconnect, just turn off, 
 
 # OUR WORK
 
+## Files
+We work on the following files :
+- README.md (this file)
+- server.js (server code)
+- main.ejs (main page)
+- sign_in.ejs (sign_in page)
+- public/css/style.css (CSS file)
+- meetngeek.sql (database) public
+- main_data.json (JSON data)    
+- package.json (project info)
+- modules/database.js (extract data from db)
+- modules/functions.js (functions such as format data)
+- modules/userSession.js (sign_in process)
+
+
 ## Main page
 The main page as been entirely built by ourselves, without using any overlay.
 It's based on CSS feed EJS files.
@@ -84,10 +122,29 @@ You can't for now access on a game page, or on an user page by cliking on it, bu
 
 You can access to the Steam webpage of a game though, by cliking on the "Get on Steam" button.
 
-Please note that those links, and games images are harvested from the official Steam website by getting the Steam Game ID.
+Note that those links, and games images are harvested from the official Steam website by getting the Steam Game ID.
 Game images are displayed directly with the link to steam servers of the image.
 
 The Javascript, with the server.js file, use the information in the main_data.json file. This file is filled by JSON formated data, about the current user, and is account details (Games he owned, friends he got...).
 
 ## Database
-All the user data are in a MySQL database.
+All the user data are in a MySQL database. Those data have currently been fed by the end. At term, the database will be edit when a new user register, or when action are made by the user on the site.
+
+Functions get the data from the database to edit the JSON file, feeding the site main page.
+
+Sessions cookies are used to determine whether or not your browser is connected to the website.
+
+A pre-fill JSON file as been built for earlier test. You can see how it been used by replacing the "main_data.json" file by the "main_data-TEST.json" (after removing "-TEST" from its name) file in the project repertory.
+
+# EVOLUTIONS
+
+## Security
+Actually, no security is implemented, and password are stored in the main database. Security will be an important thing to implement in the future.
+
+## Webpages
+Only the website main page is currently working properly. Other webpages (user profile, sign in, sign up formular, game informations, settings, messagery...) will be futher developped and included in the project.
+
+## Message system
+A message system will also be implemented. It will include :
+- Standard messagery (Facebook style)
+- Chatrooms, private or pubic, on games, lobbies etc...
