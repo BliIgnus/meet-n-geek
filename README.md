@@ -45,6 +45,7 @@ You can have a copy of the application by forking the project on GitHub
 YOU MUST HAVE NODE.JS INSTALLED ON YOUR COMPUTER TO GET THIS APPLICATION WORKING. IF NOT, CHECK OUT https://nodejs.org/en/ AND FOLLOW INSTALLATION STEPS.
 
 YOU MUST HAVE XAMPP INSTALLED ON YOUR COMPUTER TO GET THIS APPLICATION WORKING. IF NOT, CHECK OUT https://www.apachefriends.org/fr/download.html AND FOLLOW INSTALLATION STEPS.
+(Another database system can work, but we only guarantee Xampp)
 
 ## Installation steps
 ### Get the project
@@ -89,7 +90,7 @@ To connect, you can use one of the following couples of username-password :
 3. Username: presea@gmail.com - Password: presea
 4. Username: paupau@popo.com - Password: paupau
 
-We didn't design the sign up webpage at the moment, but we build a few relations between the users.
+We didn't design the sign up webpage at the moment, but we built a few relations between the users.
 We invite you to switch between user to see the main page change.
 
 ## Disconnetion
@@ -113,22 +114,22 @@ We work on the following files :
 
 
 ## Main page
-The main page as been entirely built by ourselves, without using any overlay.
-It's based on CSS feed EJS files.
-The based file is HTML code modified and feed by Javascript.
+The main page has been entirely built by ourselves, without using any overlay.
+It's based on a EJS file which is embellished with CSS.
+EJS allows to create HTML code modified and fed by Javascript.
 
 Only the main page as been made so far.
-You can't for now access on a game page, or on an user page by cliking on it, but it will be featured in the future.
+You can't for now access to a game page, or to an user page by cliking on it; but it will be featured in the future.
 
-You can access to the Steam webpage of a game though, by cliking on the "Get on Steam" button.
+You can access to the Steam webpage of a game, though, by cliking on the "Get on Steam" button.
 
-Note that those links, and games images are harvested from the official Steam website by getting the Steam Game ID.
+Please note that those links and games images are retrieved from the official Steam website by getting the Steam Game ID.
 Game images are displayed directly with the link to steam servers of the image.
 
-The Javascript, with the server.js file, use the information in the main_data.json file. This file is filled by JSON formated data, about the current user, and is account details (Games he owned, friends he got...).
+The Javascript, with the server.js file, uses the information in the main_data.json file. This file is filled by JSON formated data, about the current user, and their account details (Games they own, friends they got...).
 
 ## Database
-All the user data are in a MySQL database. Those data have currently been fed by the end. At term, the database will be edit when a new user register, or when action are made by the user on the site.
+All the user data are in a MySQL database. Those data have currently been fed manually. In the end, the database will be edited when a new user registers, or when actions are made by the user on the site.
 
 Functions get the data from the database to edit the JSON file, feeding the site main page.
 
@@ -139,12 +140,12 @@ A pre-fill JSON file as been built for earlier test. You can see how it been use
 # EVOLUTIONS
 
 ## Security
-Actually, no security is implemented, and password are stored in the main database. Security will be an important thing to implement in the future.
+Currently, no security is implemented, and passwords are stored in the main database without encryption. Security will be an important thing to implement in the future.
 
 ## Webpages
-Only the website main page is currently working properly. Other webpages (user profile, sign in, sign up formular, game informations, settings, messagery...) will be futher developped and included in the project.
+Only the website main page is currently working properly. Other webpages (user profile, sign in, sign up form, game informations, settings, messagery...) will be further developped and included in the project.
 
 ## Message system
 A message system will also be implemented. It will include :
-- Standard messagery (Facebook style)
+- Standard messaging service (Facebook style)
 - Chatrooms, private or pubic, on games, lobbies etc...
